@@ -19,5 +19,11 @@ def score_lead(Lead):
     else:
         return "COLD"
 
+
+results = []    
+
 for lead in leads:
-     print(lead["name"], score_lead(lead))
+     lead_data = {'name': lead.get("name"), 'tier': score_lead(lead)}
+     results.append(lead_data)
+
+print(results)
